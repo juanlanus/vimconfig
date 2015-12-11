@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/juan.lanus/smu/dev/myFeedback-web/src/main/webapp/assets/content/qastarmeup'
+let g:netrw_dirhist_2='/home/juan.lanus/smu/dev/myFeedback-web/src/main/webapp/assets/content/qastarmeup/img'
+let g:netrw_dirhist_3='/home/juan.lanus/smu/dev/myFeedback-web/src/main/webapp/assets/content/qastarmeup'
+let g:netrw_dirhist_4='/home/juan.lanus/smu/dev/myFeedback-web/src/main/webapp/assets/content/qastarmeup/fonts'
+let g:netrw_dirhist_5='/home/juan.lanus/smu/dev/myFeedback-web/src/main/webapp/assets/content/qastarmeup'
+let g:netrw_dirhist_6='/home/juan.lanus/smu/dev/myFeedback-web/src/main/webapp/assets/content'
+let g:netrw_dirhist_7='/home/juan.lanus/smu/dev/myFeedback-web/src/main/webapp/assets'
+let g:netrw_dirhist_8='/home/juan.lanus/w/BackboneCourse/organizer'
+let g:netrw_dirhist_9='/home/juan.lanus/smu/dev/myFeedback-web-v1/app/templates'

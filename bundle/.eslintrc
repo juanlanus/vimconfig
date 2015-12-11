@@ -1,0 +1,28 @@
+{
+    "rules": {
+        "indent": [ 2, 4 ],
+        "quotes": [ 2, "single" ],
+        "linebreak-style": [ 2, "unix" ],
+        "semi": [ 2, "always" ],
+        "eqeqeq": [2, "smart"],
+        "no-caller": [2],
+        "no-empty-pattern": [2],
+        "no-eval": [2],
+        "no-floating-decimal": [2],
+        "no-implicit-coercion": [2],
+        "no-implied-eval": [2],
+        "no-invalid-this": [2],
+        "no-octal-escape": [2],
+        "no-octal": [2],
+        "no-self-compare": [2],
+        "no-with": [2],
+        "radix": [2],
+        "no-use-before-define ": [2],
+        "brace-style": [1, "1tbs", { "allowSingleLine": true }],
+        "comma-spacing": [1, {"before": false, "after": true}],
+        "comma-style": [2, "last"],
+        "key-spacing": [1, {"beforeColon": false, "afterColon": true}]
+    },
+    "env": { "browser": true },
+    "extends": "eslint:recommended"
+}
