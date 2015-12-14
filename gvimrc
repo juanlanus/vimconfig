@@ -19,7 +19,7 @@ highlight NonText guibg=grey80
 highlight Constant gui=NONE guibg=#f0f0f0
 highlight String gui=NONE guibg=#f0f0f0
 highlight Special gui=NONE guibg=grey95
-highlight Search guibg=lightyellow guifg=DarkBlue 
+highlight Search guibg=yellow guifg=DarkBlue 
 " highlight Constant guibg=bg guifg=DarkGreen
 highlight Comment guifg=Navy
 " colorscheme shine
