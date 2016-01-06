@@ -4,7 +4,8 @@ execute pathogen#infect()
 " silent! call pathogen#infect()
 " silent! call pathogen#helptags()
 
-set undodir=C:\\Users\\juan.lanus\\.vim\\undo\\
+" mkdir ~/.vimundo
+set undodir=~/.vimundo
 set undofile
 
 " syntastic settings

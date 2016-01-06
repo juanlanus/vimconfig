@@ -1,10 +1,8 @@
 " Vim
 " The commands in this file are executed when the GUI is started.
 "
-" set shell=%SystemRoot%\system32\cmd.exe
-" set shell+=\ /D 
 
-" Fondo claro (las opciones son "light" o "dark")
+" Light background (the options are "light" or "dark")
 set background=light
 
 set lines=64
@@ -54,7 +52,7 @@ highlight Folded guibg=#f0f0f0 guifg=darkBlue	" gris más claro para los folds
 " set guifont=Consolas:h9:cANSI
 " set printfont=Consolas:h8
 " number of pixel lines between lines: compact, with ruler
-set linespace=-1
+set linespace=0
 set cursorline
 hi CursorLine guibg=#d8d8d8
 
