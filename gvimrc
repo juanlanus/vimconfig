@@ -30,7 +30,7 @@ highlight LineNr guibg=#f0f0f0 guifg=#404040
 "DiffAdd    diff mode: Added line |diff.txt|
 "DiffDelete diff mode: Deleted line |diff.txt|
 highlight DiffChange    guibg=#ffffcc
-highlight DiffText	guibg=LightYellow
+highlight DiffText	guibg=Yellow
 highlight DiffAdd   guibg=#eeffee
 highlight DiffDelete    guibg=#eeeeff
 set diffopt=filler,icase,iwhite,context:999
@@ -47,14 +47,14 @@ highlight fortranComment guifg=#404040
 highlight fortranContinueMark	guibg=#f8f8ff guifg=#202080
 highlight Folded guibg=#f0f0f0 guifg=darkBlue	" gris más claro para los folds
 
-" font selection: Consolas "h"pts
-" set guifont=Monospace
-" set guifont=Consolas:h9:cANSI
-" set printfont=Consolas:h8
+" font selection
 " number of pixel lines between lines: compact, with ruler
-set linespace=0
+set linespace=-1
 set cursorline
 hi CursorLine guibg=#d8d8d8
+" set guifont=Droid\ Sans\ Mono\ 10
+" let &guifont = "Droid Sans Mono 10"
+set guifont=Droid\ Sans\ Mono\ 10
 
 " supress toolbar
 set guioptions-=T
@@ -74,6 +74,11 @@ set guioptions-=T
 " Switch syntax highlighting (after options)
 syntax on
 
+" Don't backup desktop files
+set backupskip=/home/juan/Desktop/*
+
+" Map :noh to <f12> to turn search highlight off
+map <f12> :noh<CR>
 " F8 to open the tags window
 nnoremap <silent> <F8> :Tlist<CR> 
 
