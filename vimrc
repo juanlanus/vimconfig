@@ -67,6 +67,8 @@ set scrolloff=0         " don't scroll search results
 " scroll one col at a time when the cursor is at columns of the margin
 set sidescroll=1
 set sidescrolloff=4
+set nocursorbind
+set scrollopt=
 
 filetype plugin on      " This enables filetype plugins
 filetype plugin indent on
