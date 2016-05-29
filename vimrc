@@ -45,6 +45,7 @@ set backupskip+=,*/Desktop*,*/Escritorio/*
 
 set errorbells
 set visualbell
+set showcmd
 
 set more
 
