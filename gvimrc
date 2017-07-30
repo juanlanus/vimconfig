@@ -55,6 +55,7 @@ hi CursorLine guibg=#d8d8d8
 " set guifont=Droid\ Sans\ Mono\ 10
 " let &guifont = "Droid Sans Mono 10"
 set guifont=Droid\ Sans\ Mono\ 10
+set guifont=Monospace\ 12
 
 " supress toolbar
 set guioptions-=T

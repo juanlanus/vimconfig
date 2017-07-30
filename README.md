@@ -5,6 +5,15 @@ Yields a minimalistic window, with almost all the space devoted to
 text content. Like for example no menu bar.  
 Also, it doesn't include a dazzling color scheme. 
 
+## Installing
+
+Clone the repo wherever it fits you. directories organization.  
+Then, set a symbolic link in your home directory pointing `.vim` to the repo, like for example
+```    ln -s ~/whatever/vimconfig .vim
+At startup, vim will look for its configuratin files in this directory first.  
+
+## Additional software
+
 <b>tern</b>: (git submodule)  
 Includes the tern autocompletion engine. 
 <p>repo: <a href="https://github.com/ternjs/tern_for_vim">Tern for Vim</a> (<a href="http://ternjs.net/doc/manual.html#vim">docs</a>)</p>  
