@@ -9,7 +9,10 @@ Also, it doesn't include a dazzling color scheme.
 
 Clone the repo wherever it fits you. directories organization.  
 Then, set a symbolic link in your home directory pointing `.vim` to the repo, like for example
-```    ln -s ~/whatever/vimconfig .vim
+```
+    ln -s ~/whatever/vimconfig .vim
+```
+
 At startup, vim will look for its configuratin files in this directory first.  
 
 ## Additional software
