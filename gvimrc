@@ -1,6 +1,10 @@
 " Vim
 " The commands in this file are executed when the GUI is started.
 "
+"
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 " Light background (the options are "light" or "dark")
 set background=light
@@ -51,11 +55,13 @@ highlight Folded guibg=#f0f0f0 guifg=darkBlue	" gris más claro para los folds
 " number of pixel lines between lines: compact, with ruler
 set linespace=-1
 set cursorline
-hi CursorLine guibg=#d8d8d8
+hi CursorLine guibg=#ececec
 " set guifont=Droid\ Sans\ Mono\ 10
 " let &guifont = "Droid Sans Mono 10"
-set guifont=Droid\ Sans\ Mono\ 10
-set guifont=Monospace\ 12
+" set guifont=Droid\ Sans\ Mono\ 10
+" set guifont=Monospace\ 12
+" set guifont=Ubuntu\ Mono\ 14
+set guifont=Liberation\ Mono\ 15
 
 " supress toolbar
 set guioptions-=T

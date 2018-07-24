@@ -4,8 +4,12 @@ execute pathogen#infect()
 " silent! call pathogen#infect()
 " silent! call pathogen#helptags()
 
-" mkdir ~/.vimundo
-set undodir=~/.vimundo
+" Let's save undo info
+" https://vi.stackexchange.com/questions/6/how-can-i-use-the-undofile
+if !isdirectory($HOME."/.vim-undo-dir")
+    call mkdir($HOME."/.vim-undo-dir", "", 0700)
+endif
+set undodir=~/.vim-undo-dir
 set undofile
 
 " syntastic settings
@@ -19,6 +23,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs=1
+let g:syntastic_loc_list_height=4
+" Map :lclose to <f11> to close the errors window
+map <f11> :lclose<CR>
 
 set helplang=en
 set ignorecase
