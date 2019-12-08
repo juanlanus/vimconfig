@@ -1,6 +1,7 @@
 " Vim
 " The commands in this file are executed when the GUI is started.
 "
+" New plugin, to highlight JSX without errors: https://github.com/MaxMEllon/vim-jsx-pretty
 "
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -15,8 +16,14 @@ set columns=132
 " Hide the mouse pointer while typing
 set mousehide
 
+" Hit F3 to see the highlights of the char under the cursor
+map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
+
 " Set nice colors
-highlight Normal guibg=white
+highlight ErrorMsg	 guifg=navy
+" highlight Ignore	guibg=White guifg=Red
+highlight htmlError guibg=red guifg=navy
+highlight jsParensError guibg=red guifg=navy
 highlight NonText guibg=grey80
 highlight Constant gui=NONE guibg=#f0f0f0
 highlight String gui=NONE guibg=#f0f0f0
@@ -61,7 +68,8 @@ hi CursorLine guibg=#ececec
 " set guifont=Droid\ Sans\ Mono\ 10
 " set guifont=Monospace\ 12
 " set guifont=Ubuntu\ Mono\ 14
-set guifont=Liberation\ Mono\ 15
+" set guifont=Liberation\ Mono\ 13
+set guifont=Ubuntu\ Mono\ 16
 
 " supress toolbar
 set guioptions-=T
@@ -88,6 +96,10 @@ set backupskip=/home/juan/Desktop/*
 map <f12> :noh<CR>
 " F8 to open the tags window
 nnoremap <silent> <F8> :Tlist<CR> 
+
+" switch to prev/next tab https://superuser.com/questions/410982/in-vim-how-can-i-quickly-switch-between-tabs
+nmap <C-N> gt
+nmap <C-P> gT
 
 " FORTRAN: Comandos y sus terminaciones para matchit.vim:
 " Los del archivo ftplugin/fortran.vim andan OK excepto por if continuados

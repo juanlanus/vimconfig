@@ -26,6 +26,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_loc_list_height=4
 " Map :lclose to <f11> to close the errors window
 map <f11> :lclose<CR>
+silent! nmap <F6> :SyntasticToggleMode<CR>
 
 set helplang=en
 set ignorecase
@@ -67,11 +68,11 @@ set cursorline
 highlight CursorLine guibg=#f0fff0
 set ruler
 set showmode
-set columns=140
-set lines=45
+set columns=120
+set lines=32
 set scrolloff=0         " don't scroll search results
 
-" scroll one col at a time when the cursor is at columns of the margin
+" scroll one col at a time when the cursor is at columns off the margin
 set sidescroll=1
 set sidescrolloff=4
 set nocursorbind
@@ -81,6 +82,8 @@ filetype plugin on      " This enables filetype plugins
 filetype plugin indent on
 
 set mousehide           " Hide the mouse when typing text
+
+set mouse=a             " enable mouse in terminal
 
 if !exists("syntax_on") " Switch on syntax highlighting if it wasn't on yet.
     syntax on
