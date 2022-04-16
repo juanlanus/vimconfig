@@ -3,6 +3,7 @@
 "
 " New plugin, to highlight JSX without errors: https://github.com/MaxMEllon/vim-jsx-pretty
 "
+set statusline=%m\ %f\ %l\:%c
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -60,16 +61,17 @@ highlight Folded guibg=#f0f0f0 guifg=darkBlue	" gris más claro para los folds
 
 " font selection
 " number of pixel lines between lines: compact, with ruler
-set linespace=-1
+set linespace=-2
 set cursorline
-hi CursorLine guibg=#ececec
+hi CursorLine guibg=#f4f4f4
 " set guifont=Droid\ Sans\ Mono\ 10
 " let &guifont = "Droid Sans Mono 10"
 " set guifont=Droid\ Sans\ Mono\ 10
 " set guifont=Monospace\ 12
 " set guifont=Ubuntu\ Mono\ 14
-" set guifont=Liberation\ Mono\ 13
-set guifont=Ubuntu\ Mono\ 16
+" set guifont=Ubuntu\ Mono\ 16
+" set guifont=Liberation\ Mono\ 14
+set guifont=Source\ Code\ Pro\ Regular\ 15
 
 " supress toolbar
 set guioptions-=T

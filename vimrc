@@ -15,6 +15,7 @@ set undofile
 " syntastic settings
 " Plug 'scrooloose/syntastic' produces an error
 let g:syntastic_javascript_checkers = ['eslint']
+set statusline=%m\ %f\ %l\:%c
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -63,6 +64,8 @@ set incsearch
 set showmatch
 " Map :noh to <f12> to turn search highlight off (no hlsearch)
 map <f12> :noh<CR>
+" Make <F8> set the full path name in the clipboard ("*)
+map <F8> :let @*=expand('%:p')<CR>
 
 set cursorline
 highlight CursorLine guibg=#f0fff0
