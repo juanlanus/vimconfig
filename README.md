@@ -7,7 +7,7 @@ Also, it doesn't include a dazzling color scheme.
 
 ## Installing
 
-Clone the repo wherever it fits you. directories organization.  
+Clone the repo wherever it fits your directories organization.  
 Then, set a symbolic link in your home directory pointing `.vim` to the repo, like for example
 ```
     ln -s ~/whatever/vimconfig .vim

@@ -1,3 +1,4 @@
+" VIMRC
 set nocompatible
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""execute pathogen#infect()
 execute pathogen#infect()
@@ -170,3 +171,16 @@ funct! Exec(command)
     set nopaste
     " let &paste = saveapaste 
 endfunct!
+
+" netrw options https://shapeshed.com/vim-netrw/
+let g:netrw_banner = 0
+let g:netrw_browse_split = 3
+let g:netrw_winsize = 25 " percent of window width
+
+ " Line Wrapping ***************************************************************
+ set nowrap
+ set linebreak  " Wrap at word
+
+
+
+

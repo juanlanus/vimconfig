@@ -1,0 +1,222 @@
+
+https://groups.google.com/g/vim_use/c/zm4jZRKOQTs?pli=1
+
+Here is the content of my .vimrc file
+=======================================================================
+set directory=%TMP%,~/.tmp
+set backupdir=%TMP%,~/.tmp
+
+ set rtp+=~/.vim/bundle/Vundle.vim
+ call vundle#begin()
+ "Let Vundle manage Vundle
+ "required:  all the plugins should be located in ~/.vim/bundle
+ Plugin 'Vundle/Vundle.vim'
+ Plugin 'vim-scripts/Align.git'
+ Plugin 'vim-scripts/The-NERD-tree.git'
+ Plugin 'vim-scripts/surround.git'
+ "Plugin 'vim-scripts/snipMate.git'
+ Plugin 'vim-scripts/taglist.vim.git'
+ Plugin 'vim-scripts/pyte.git'
+ Plugin 'vim-scripts/asciidoc.vim.git'
+ Plugin 'vim-scripts/The-NERD-Commenter.git'
+ Plugin 'vim-scripts/VHDL-indent-93-syntax.git'
+ Plugin 'vim-scripts/tagbar'
+ Plugin 'vim-scripts/FastFold'
+ Plugin 'vim-scripts/verilog_systemverilog.vim.git'
+ "Plugin 'vim-scripts/fugitive.vim.git'
+ Plugin 'vim-scripts/python.vim.git'
+ Plugin 'vim-scripts/ctrlp.vim.git'
+ Plugin 'vim-scripts/Solarized'
+ " ==>Plugin 'vim-scripts/Distinguished.git'
+ Plugin 'vim-scripts/jellybeans.vim.git'
+ Plugin 'vim-scripts/VimOutliner.git'
+ Plugin 'vim-scripts/VimOrganizer.git'
+ Plugin 'vim-scripts/Auto-Pairs.git'
+ Plugin 'vim-scripts/calendar.vim--Matsumoto.git'
+ Plugin 'vim-scripts/L9'
+ Plugin 'vim-scripts/fuzzyfinder'
+ Plugin 'vim-scripts/vim-snippets'
+ Plugin 'vim-scripts/vim-obsession'
+ Plugin 'vim-scripts/ultisnips'
+ Plugin 'vim-scripts/obsession'
+ "Plugin 'vim-scripts/Vimliberty'
+ Plugin 'bling/vim-airline'
+ call vundle#end()
+
+" Enable both line numbering styles
+set number relativenumber
+" Hybrid line number: switch to relative line number when on focus
+" otherwise stay with relative line number
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
+ 
+ 
+ set nocompatible
+ let mapleader = ","
+ imap jj <Esc> " Professor VIM says '87% of users prefer jj over esc', jj abrams disagrees
+" Ultisnip
+let  g:UltiSnipsExpandTrigger="<tab>"              
+let  g:UltiSnipsListSnippets="<c-tab>"              
+let  g:UltiSnipsJumpForwardTrigger="<c-j>"        
+let  g:UltiSnipsJumpBackwardTrigger="<c-k>"    
+ 
+ " Tabs **************************************************
+ set softtabstop=4
+ set shiftwidth=4
+ set tabstop=8
+ set expandtab
+ 
+ 
+ " indenting *********************************************
+ set ai " Automatically set the indent of a new line (local to buffer)
+ set si " smartindent (local to buffer)
+ 
+ 
+ " Scrollbars ******************************************************************
+ set sidescrolloff=2
+ set numberwidth=4
+ " Cmd line completion
+ "set wildmode
+ 
+ " Windows *********************************************************************
+ set equalalways " Multiple windows, when created, are equal in size
+ set splitbelow splitright
+ 
+ " Vertical and horizontal split then hop to a new buffer
+ :noremap <Leader>v :vsp^M^W^W<cr>
+ :noremap <Leader>h :split^M^W^W<cr>
+ 
+ 
+ " Cursor highlights ***********************************************************
+ set cursorline
+ set cursorcolumn
+ 
+ 
+ " Searching *******************************************************************
+ set hlsearch  " highlight search
+ set incsearch  " Incremental search, search as you type
+ set ignorecase " Ignore case when searching
+ set smartcase " Ignore case when searching lowercase
+ 
+ syntax on " syntax highlighting
+ 
+ " Colors **********************************************************************
+ if has ("gui_running")
+     set guifont=DejaVu\ Sans\ Mono\ 9
+     set lines=60
+     set columns=108
+     colorscheme jellybeans
+     :let bmenu_max_pathlen =200
+     :let menuitems         =50
+ else
+    set background=dark
+    colorscheme torte
+    "colorscheme midnight2
+    "colorscheme pyte
+ endif
+ 
+ 
+ " Delete current buffer without closing the window
+ :noremap  <Leader>d :bp\|bd #<CR>
+ 
+ " Status Line *****************************************************************
+ set showcmd
+ set ruler " Show ruler
+ "set ch=2 " Make command line two lines high
+ 
+ " Line Wrapping ***************************************************************
+ set nowrap
+ set linebreak  " Wrap at word
+ 
+ "Use the following to allow changing of the tab name
+ set guitablabel=%{exists('t:mytablabel')?t:mytablabel\ :''}
+ " use the followin on the command line to set the tab label
+ " let t:mytablabel='foo'
+ "Change the completion background from pink to brown
+ highlight Pmenu guibg=brown gui=bold
+ highlight PmenuSel ctermfg=White ctermbg=Blue cterm=Bold guifg=White guibg=DarkBlue gui=Bold
+ "For Color Terminal
+ highlight Pmenu ctermbg=238 gui=bold
+ " Use % to jump between matchin keywords
+ runtime macros/matchit.vim
+ 
+ 
+ " File Stuff ******************************************************************
+ filetype plugin indent on
+ :autocmd FileType c,cpp :set cindent
+ 
+ au! BufRead,BufNewFile *.sv setfiletype verilog_systemverilog
+ au! BufRead,BufNewFile *.svi setfiletype verilog_systemverilog
+ au! BufRead,BufNewFile *.svh setfiletype verilog_systemverilog
+ 
+ au! BufRead,BufNewFile *.logs setfiletype log
+ au! BufRead,BufNewFile *.log  setfiletype log
+ 
+ au! BufRead,BufNewFile *.log set syntax=logs
+ 
+ au! BufRead,BufNewFile *.do set syntax=tcl
+ au! BufRead,BufNewFile *.do set filetype=tcl
+ 
+ au! BufRead,BufNewFile *.bashrc    set syn=sh
+ au! BufRead,BufNewFile *.myaliases set syn=sh
+ 
+ " Folding " ********************************************************************
+ set foldmethod=indent " Automatically fold based on indentation
+ autocmd FileType verilog_systemverilog setlocal foldmethod=syntax
+ " Syntax folding elments for verilog systemverilog
+ let g:verilog_syntax_fold_lst= "module,function,task,block,instance,interface"
+ "Gvim get pretty slow when using fold in perl
+ autocmd FileType perl,perl6 setlocal foldmethod=manual
+ let perl_fold=0
+ " Save current session on exit
+ au VimLeavePre * if v:this_session != '' | exec "mks! " . v:this_session | endif
+ "
+ " NeerdTree " *******************************************************************
+ let NERDTreeHijackNetrw=1 " Use NerdTree instead of Netrw when editing
+ "Usefull mappings for coding borrowed  from Shawn Biddle's .vimrc
+ imap <leader>' ''<ESC>i
+ imap <leader>" ""<ESC>i
+ imap <leader>( ()<ESC>i
+ imap <leader>[ []<ESC>i
+ "The logiPat.vim plugin interferes with the :E command
+ let g:loaded_logipat = 1
+ 
+ "imap <leader>{ {}<ESC>i
+
+" FuzzyFInder " *****************************************************************
+map <leader>b :FufBuffer<CR>
+nnoremap <silent> fb :FufBuffer<CR>
+nnoremap <silent> fc :FufFileWithCurrentBufferDir<CR>
+nnoremap <silent> ff :FufFileWithFullCwd<CR>
+nnoremap <silent> fF :FufFile **/<CR>
+nnoremap <silent> fF :FufTaggedFile<CR>
+"search for visually selected text
+vnoremap // y/<C-R>"<CR>
+"Header FIles
+"source language specific header files
+so ~/.vim/headers/my_headers.vim
+" Invisible characters *********************************************************
+set listchars=trail:·,tab:»\
+set nolist
+:noremap <Leader>i :set list!<CR> " Toggle invisible chars
+
+
+" Misc settings ***************************************************************
+set backspace=indent,eol,start
+"set number " Show line numbers
+set title
+set guioptions-=T
+set matchpairs+=<:>
+set vb t_vb= " Turn off bell, this could be more annoying, but I'm not sure how
+"set nofoldenable " Turn off folding
+set tags=./tags,tags,../tags
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+"use  ctags --list-kinds=Verilog to get the ctags definition for Verilog
+let tlist_verilog_settings = 'Verilog;f:Func;m:Modules;p:Ports;n:Wires;r:Reg;c:Parameters;e:Events;t:Tasks'
+"let Tmenu_ctags_cmd ='/usr/local/bin/ctags'
+"set g:showfuncctagsbin
+=======================================================================
+

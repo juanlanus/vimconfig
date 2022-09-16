@@ -1,4 +1,4 @@
-" Vim
+" Vim   GVIMRC
 " The commands in this file are executed when the GUI is started.
 "
 " New plugin, to highlight JSX without errors: https://github.com/MaxMEllon/vim-jsx-pretty
@@ -63,6 +63,7 @@ highlight Folded guibg=#f0f0f0 guifg=darkBlue	" gris más claro para los folds
 " number of pixel lines between lines: compact, with ruler
 set linespace=-2
 set cursorline
+set cursorcolumn
 hi CursorLine guibg=#f4f4f4
 " set guifont=Droid\ Sans\ Mono\ 10
 " let &guifont = "Droid Sans Mono 10"
@@ -71,7 +72,7 @@ hi CursorLine guibg=#f4f4f4
 " set guifont=Ubuntu\ Mono\ 14
 " set guifont=Ubuntu\ Mono\ 16
 " set guifont=Liberation\ Mono\ 14
-set guifont=Source\ Code\ Pro\ Regular\ 15
+set guifont=Source\ Code\ Pro\ Regular\ 16
 
 " supress toolbar
 set guioptions-=T
@@ -115,13 +116,13 @@ highlight ShowMarksHL ctermfg=blue ctermbg=lightblue cterm=bold guifg=darkblue g
 " let showmarks_textlower="_"
 " let showmarks_textupper="-"
 
-" _F muestra el nombre de la subroutine/function 
+" _F muestra el nombre de la subroutine/function (FORTRAN) 
 " map _F mo?^\s\+subroutine\\|^\s\+function\\|^\s\+program
 "xy$'o:echo @x
 " mapleader reemplaza el string <leader> en algunos comandos, \ en este caso (default)
 let mapleader="\\"
 
-" encoding:
+" default encoding:
 set encoding=utf-8
 
 
